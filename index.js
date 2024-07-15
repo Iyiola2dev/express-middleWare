@@ -18,9 +18,9 @@ const personOBJ = {
 
 //middleware tp validate user
 const validateUser = (req, res, next) =>{
-    const myPasscode = "lexicon"
-    const {password} = req.headers
-    if(password === myPasscode){
+    const myApiKey = "lexicon"
+    const { apiKey } = req.query;
+    if( apiKey === myApiKey){
         next()
     }else{
         res.status(401).json({message: "Unauthorised"})
